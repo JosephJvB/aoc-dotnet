@@ -51,7 +51,6 @@ namespace _2020
                     break;
                 }
                 // move right 3 down 1
-                var row = grid[y];
                 x += xInc;
                 if (x >= grid[y].Count)
                 {
