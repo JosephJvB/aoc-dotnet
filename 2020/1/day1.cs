@@ -15,7 +15,7 @@ namespace _2020
             // Solve1();
             Solve2();
         }
-        public static void Solve2()
+        private static void Solve2()
         {
             var nums = new List<int>();
             foreach (var line in File.ReadAllLines("1/input.txt"))
@@ -40,7 +40,7 @@ namespace _2020
                 }
             }
         }
-        public static void Solve1()
+        private static void Solve1()
         {
             var nums = new List<int>();
             foreach (var line in File.ReadAllLines("1/input.txt"))
