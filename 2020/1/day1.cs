@@ -26,10 +26,11 @@ namespace _2020
             {
                 for (var j = i + 1; j < nums.Count - 1; j++)
                 {
-                    foreach (var num3 in nums.Skip(j + 1))
+                    for (var k = j + 1; k < nums.Count; k++)
                     {
                         var num1 = nums[i];
                         var num2 = nums[j];
+                        var num3 = nums[k];
                         if (num1 + num2 + num3 == 2020)
                         {
                             Console.WriteLine($"found trio: {num1}, {num2}, {num3}. {num1 * num2 * num3}");
@@ -48,13 +49,13 @@ namespace _2020
             }
             for (var i = 0; i < nums.Count - 1; i++)
             {
-                var currentNum = nums[i];
-                var rest = nums.Skip(i + 1);
-                foreach (var n in rest)
+                for (var j = i + 1; j < nums.Count; j++)
                 {
-                    if (currentNum + n == 2020)
+                    var num1 = nums[i];
+                    var num2 = nums[j];
+                    if (num1 + num2 == 2020)
                     {
-                        Console.WriteLine($"found pair {currentNum}, {n}, total: {currentNum * n}");
+                        Console.WriteLine($"found pair {num1}, {num2}, total: {num1 * num2}");
                         return;
                     }
                 }
