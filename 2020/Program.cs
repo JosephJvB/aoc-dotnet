@@ -6,7 +6,7 @@ namespace _2020
     {
         static void Main(string[] args)
         {
-            Day2.Solve();
+            Day3.Solve();
         }
     }
 }
