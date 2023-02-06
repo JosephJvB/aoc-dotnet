@@ -56,37 +56,35 @@ namespace _2020
         {
             var rMin = 0;
             var rMax = Rows;
-            var cMin = 0;
-            var cMax = Cols;
-            for (var i = 0; i < line.Length; i++)
+            for (var i = 0; i < 7; i++)
             {
                 var c = line[i];
-                if (i < 7)
+                var rHalf = (rMax - rMin) / 2;
+                if (c == 'F')
                 {
-                    var rHalf = (rMax - rMin) / 2;
-                    if (c == 'F')
-                    {
-                        rMax -= rHalf;
-                    }
-                    else
-                    {
-                        rMin += rHalf;
-                    }
-                    // Console.WriteLine($"{i}:{c} rowRange {rMin}-{rMax}");
+                    rMax -= rHalf;
                 }
                 else
                 {
-                    var cHalf = (cMax - cMin) / 2;
-                    if (c == 'L')
-                    {
-                        cMax -= cHalf;
-                    }
-                    else
-                    {
-                        cMin += cHalf;
-                    }
-                    // Console.WriteLine($"{i}:{c} colRange {cMin}-{cMax}");
+                    rMin += rHalf;
                 }
+                // Console.WriteLine($"{i}:{c} rowRange {rMin}-{rMax}");
+            }
+            var cMin = 0;
+            var cMax = Cols;
+            for (var i = 7; i < line.Length; i++)
+            {
+                var c = line[i];
+                var cHalf = (cMax - cMin) / 2;
+                if (c == 'L')
+                {
+                    cMax -= cHalf;
+                }
+                else
+                {
+                    cMin += cHalf;
+                }
+                // Console.WriteLine($"{i}:{c} colRange {cMin}-{cMax}");
             }
             return new int[]
             {
