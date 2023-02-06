@@ -31,19 +31,19 @@ namespace _2020
         {
             var lines = Parse();
             var validLines = 0;
+            var validators = new List<BaseValidator>
+            {
+                new BYR(),
+                new IYR(),
+                new EYR(),
+                new HGT(),
+                new HCL(),
+                new ECL(),
+                new PID(),
+            };
             foreach (var line in lines)
             {
                 var split = line.Split(" ").ToList();
-                var validators = new List<BaseValidator>
-                {
-                    new BYR(),
-                    new IYR(),
-                    new EYR(),
-                    new HGT(),
-                    new HCL(),
-                    new ECL(),
-                    new PID(),
-                };
                 var lineIsValid = validators.All(v => v.Validate(split));
                 if (lineIsValid)
                 {
